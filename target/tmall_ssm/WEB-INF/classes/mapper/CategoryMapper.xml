@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.how2java.tmall.mapper.CategoryMapper">
+    
+    <!--获得分页分类表信息-->
+    <select id="list" resultType="Category">
+        select * from category order by id desc
+        <if test="start!=null and count!=null">
+            limit #{start},#{count}
+        </if>
+    </select>
+    
+    <!--获得总页数-->
+    <select id="total" resultType="int">
+        select count(*) from category
+    </select>
+    
+    <!--新增分类记录-->
+    <insert id="add" keyProperty="id" useGeneratedKeys="true" parameterType="Category">
+        insert into category (name) values (#{name})
+    </insert>
+    
+    <!--删除分类记录-->
+    <delete id="delete">
+        delete from category where id = #{id}
+    </delete>
+    
+    <!--通过id查询单条分类记录-->
+    <select id="getById" resultType="Category">
+        select * from category where id = #{id}
+    </select>
+    
+    <!--修改分类记录-->
+    <update id="update" parameterType="Category">
+        update category set name=#{name} where id=#{id}
+    </update>
+    
+</mapper>
