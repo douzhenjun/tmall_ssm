@@ -8,15 +8,8 @@
     <!--获得分页分类表信息-->
     <select id="list" resultType="Category">
         select * from category order by id desc
-        <if test="start!=null and count!=null">
-            limit #{start},#{count}
-        </if>
     </select>
     
-    <!--获得总页数-->
-    <select id="total" resultType="int">
-        select count(*) from category
-    </select>
     
     <!--新增分类记录-->
     <insert id="add" keyProperty="id" useGeneratedKeys="true" parameterType="Category">
