@@ -10,11 +10,13 @@
     <!--启动注解识别-->
     <context:annotation-config/>
 
+    <!--扫描处理器路径, 经前端控制器拦截以后向此路径下的类中转发请求-->
     <context:component-scan base-package="com.how2java.tmall.controller">
         <context:include-filter type="annotation"
                                 expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
+    <!--处理映射器和视图解析器的增强-->
     <mvc:annotation-driven />
 
     <!--开通静态资源的访问-->
