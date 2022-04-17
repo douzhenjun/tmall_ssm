@@ -4,6 +4,7 @@ import com.how2java.tmall.pojo.Product;
 import com.how2java.tmall.pojo.ProductExample;
 import java.util.List;
 
+
 public interface ProductMapper {
     int deleteByPrimaryKey(Integer id);
 

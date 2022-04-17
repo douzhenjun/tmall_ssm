@@ -34,7 +34,7 @@ public class CategoryController {
   
     @RequestMapping("admin_category_list")
     public String list(Model model,Page page){
-        PageHelper.startPage(page.getStart(), page.getCount());
+        PageHelper.offsetPage(page.getStart(), page.getCount());
         List<Category> cs = categoryService.list();
         int total = (int) new PageInfo<>(cs).getTotal();
         page.setTotal(total);
