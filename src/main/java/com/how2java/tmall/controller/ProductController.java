@@ -32,7 +32,7 @@ public class ProductController {
     }
     
     @RequestMapping("admin_product_list")
-    public String list(Model model, Integer cid, Page p){
+    public String list(Model model, int cid, Page p){
         Category category = categoryService.getById(cid);
         PageHelper.offsetPage(p.getStart(), p.getCount());
         List<Product> productList = productService.list(cid);

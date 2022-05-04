@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="tmall_ssm_04">
-    <output-path>$PROJECT_DIR$/out/artifacts/tmall_ssm_04</output-path>
+    <output-path>$PROJECT_DIR$/target/tmall_ssm</output-path>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

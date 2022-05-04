@@ -9,6 +9,17 @@ public class PropertyValue {
 
     private String value;
 
+    //新增property属性和get,set方法
+    private Property property;
+    
+    public Property getProperty() {
+        return property;
+    }
+
+    public void setProperty(Property property) {
+        this.property = property;
+    }
+
     public Integer getId() {
         return id;
     }

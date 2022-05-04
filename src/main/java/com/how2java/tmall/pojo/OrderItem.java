@@ -10,6 +10,17 @@ public class OrderItem {
     private Integer uid;
 
     private Integer number;
+    
+    /*新增Product属性*/
+    private Product product;
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
 
     public Integer getId() {
         return id;
