@@ -18,18 +18,19 @@ public class Product {
     private Integer cid;
 
     private Date createDate;
-    
-    //以下两个属性为非表中的字段
-    private Category category;
-    
-    private ProductImage productImage;
 
-    public ProductImage getProductImage() {
-        return productImage;
+
+    /*非数据库字段*/
+    private Category  category;
+
+    private ProductImage firstProductImage;
+
+    public ProductImage getFirstProductImage() {
+        return firstProductImage;
     }
 
-    public void setProductImage(ProductImage productImage) {
-        this.productImage = productImage;
+    public void setFirstProductImage(ProductImage firstProductImage) {
+        this.firstProductImage = firstProductImage;
     }
 
     public Category getCategory() {
@@ -103,4 +104,5 @@ public class Product {
     public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
+
 }

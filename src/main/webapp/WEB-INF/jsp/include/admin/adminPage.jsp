@@ -28,9 +28,8 @@ $(function(){
 
     <c:forEach begin="0" end="${page.totalPage-1}" varStatus="status">
     
-    	    <%-- 如果页数是当前页数, 那么这个页数字不可点击 --%>
+    	
 		    <li <c:if test="${status.index*page.count==page.start}">class="disabled"</c:if>>
-                <%-- 如果点击其他页数字, 将会跳转到那一页的界面, 首先传递start参数给page, 然后触发后台执行list方法, 展示新的分页效果 --%>
 		    	<a  
 		    	href="?start=${status.index*page.count}${page.param}"
 		    	<c:if test="${status.index*page.count==page.start}">class="current"</c:if>

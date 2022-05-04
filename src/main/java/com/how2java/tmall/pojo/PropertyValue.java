@@ -9,9 +9,9 @@ public class PropertyValue {
 
     private String value;
 
-    //新增property属性和get,set方法
+    /*非数据库字段*/
     private Property property;
-    
+
     public Property getProperty() {
         return property;
     }

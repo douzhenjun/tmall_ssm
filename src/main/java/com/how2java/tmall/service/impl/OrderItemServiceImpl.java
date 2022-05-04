@@ -13,6 +13,7 @@ import com.how2java.tmall.pojo.Product;
 import com.how2java.tmall.service.OrderItemService;
 import com.how2java.tmall.service.ProductService;
 
+
 @Service
 public class OrderItemServiceImpl implements OrderItemService {
     @Autowired
@@ -56,6 +57,9 @@ public class OrderItemServiceImpl implements OrderItemService {
         }
     }
 
+
+
+
     public void fill(Order o) {
         OrderItemExample example =new OrderItemExample();
         example.createCriteria().andOidEqualTo(o.getId());
@@ -73,6 +77,7 @@ public class OrderItemServiceImpl implements OrderItemService {
         o.setTotalNumber(totalNumber);
         o.setOrderItems(ois);
 
+
     }
 
     public void setProduct(List<OrderItem> ois){
@@ -85,6 +90,7 @@ public class OrderItemServiceImpl implements OrderItemService {
         Product p = productService.get(oi.getPid());
         oi.setProduct(p);
     }
+
 
     ;
 

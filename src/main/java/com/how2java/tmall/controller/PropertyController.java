@@ -39,7 +39,7 @@ public class PropertyController {
     @RequestMapping("admin_property_edit")
     public String edit(Model model, int id) {
         Property p = propertyService.get(id);
-        Category c = categoryService.getById(p.getCid());
+        Category c = categoryService.get(p.getCid());
         p.setCategory(c);
         model.addAttribute("p", p);
         return "admin/editProperty";
@@ -53,7 +53,7 @@ public class PropertyController {
 
     @RequestMapping("admin_property_list")
     public String list(int cid, Model model,  Page page) {
-        Category c = categoryService.getById(cid);
+        Category c = categoryService.get(cid);
 
         PageHelper.offsetPage(page.getStart(),page.getCount());
         List<Property> ps = propertyService.list(cid);

@@ -5,6 +5,7 @@ import com.how2java.tmall.service.OrderService;
 import java.util.Date;
 import java.util.List;
 
+
 public class Order {
     private Integer id;
 
@@ -31,47 +32,16 @@ public class Order {
     private Integer uid;
 
     private String status;
-    
-    /*以下为新增的数据库字段*/
+
+
+    /*如下是非数据库字段*/
     private List<OrderItem> orderItems;
-    
+
     private User user;
-    
+
     private float total;
-    
+
     private int totalNumber;
-
-    public List<OrderItem> getOrderItems() {
-        return orderItems;
-    }
-
-    public void setOrderItems(List<OrderItem> orderItems) {
-        this.orderItems = orderItems;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public float getTotal() {
-        return total;
-    }
-
-    public void setTotal(float total) {
-        this.total = total;
-    }
-
-    public int getTotalNumber() {
-        return totalNumber;
-    }
-
-    public void setTotalNumber(int totalNumber) {
-        this.totalNumber = totalNumber;
-    }
 
     public Integer getId() {
         return id;
@@ -177,6 +147,20 @@ public class Order {
         this.status = status == null ? null : status.trim();
     }
 
+    public List<OrderItem> getOrderItems() {
+        return orderItems;
+    }
+
+    public void setOrderItems(List<OrderItem> orderItems) {
+        this.orderItems = orderItems;
+    }
+    
+    
+    public static void main(String args[]){
+        Order o  = new Order();
+        o.setStatus(OrderService.delete);
+        System.out.println(o.getStatusDesc());
+    }
     public String getStatusDesc(){
         String desc ="未知";
         switch(status){
@@ -202,5 +186,30 @@ public class Order {
                 desc="未知";
         }
         return desc;
+    }
+
+
+    public float getTotal() {
+        return total;
+    }
+
+    public void setTotal(float total) {
+        this.total = total;
+    }
+
+    public int getTotalNumber() {
+        return totalNumber;
+    }
+
+    public void setTotalNumber(int totalNumber) {
+        this.totalNumber = totalNumber;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

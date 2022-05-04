@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
 @Service
 public class PropertyServiceImpl implements PropertyService {
     @Autowired
@@ -39,11 +40,12 @@ public class PropertyServiceImpl implements PropertyService {
 
     @Override
     public List list(int cid) {
-        //用到了辅助查询类, 根据分类id查询属性信息
         PropertyExample example =new PropertyExample();
         example.createCriteria().andCidEqualTo(cid);
         example.setOrderByClause("id desc");
         return propertyMapper.selectByExample(example);
     }
+
+
 
 }

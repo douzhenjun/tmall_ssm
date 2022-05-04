@@ -14,11 +14,14 @@ import java.util.List;
 
 @Service
 public class PropertyValueServiceImpl implements PropertyValueService {
+
     @Autowired
     PropertyValueMapper propertyValueMapper;
 
+
     @Autowired
     PropertyService propertyService;
+
 
     @Override
     public void init(Product p) {
